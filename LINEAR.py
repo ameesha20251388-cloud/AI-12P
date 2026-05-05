@@ -11,8 +11,8 @@ model.fit(X_train,y_train)
 st.title("Exam Score Predictor")
 st.write("Enter the hours studied for prediction")
 hours=st.number_input("Hours studied:",min_value=0.0,step=0.1)
-if st.button("Predict Score")
-predicted_score=model.predict([[hours]])[0]
-st.success(f'Predicted Score:{predicted_score:2f}')
+if st.button("Predict Score"):
+   predicted_score=model.predict([[hours]])[0]
+   st.success(f'Predicted Score:{predicted_score:2f}')
 st.write('### Sample Training Data')
 st.dataframe(df)
