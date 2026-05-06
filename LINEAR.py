@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-df=pd.read_csv('Student_Mark.csv')
-X=df[["HoursStudies"]]
-y=df[['ExamScore']]
+df=pd.read_csv("student_scores")
+X=df.iloc[:,:-1].values
+y=df.iloc[:,-1].values
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
 model=LinearRegression()
 model.fit(X_train,y_train)
